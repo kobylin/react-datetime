@@ -235,8 +235,11 @@ var Datetime = createClass({
 	showView: function( view ) {
 		var me = this;
 		return function() {
-			me.state.currentView !== view && me.props.onViewModeChange( view );
-			me.setState({ currentView: view });
+			var nextView = null;
+			if (me.state.currentView !== view) {
+				nextView = me.props.onViewModeChange( view );
+			}
+			me.setState({ currentView: nextView || view });
 		};
 	},
 
