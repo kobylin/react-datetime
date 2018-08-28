@@ -307,7 +307,7 @@ var Datetime = createClass({
 	},
 
 	updateSelectedDate: function( e, close ) {
-		var target = e.target,
+		var target = e.currentTarget,
 			modifier = 0,
 			viewDate = this.state.viewDate,
 			currentDate = this.state.selectedDate || viewDate,
